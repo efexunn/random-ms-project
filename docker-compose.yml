@@ -1,1 +1,22 @@
 services:
+  postgres:
+    container_name: ms_postgre
+    image: postgres
+    environment:
+      POSTGRES_USER: efexunn
+      POSTGRES_PASSWORD: efexunn
+      PGDATA: /var/lib/postgresql/data
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    networks:
+      - ms-template
+    restart: unless-stopped
+
+networks:
+  ms-template:
+    driver: bridge
+
+volumes:
+  postgres:
