@@ -31,3 +31,7 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# macOS sistem dosyası
+.DS_Store
+
